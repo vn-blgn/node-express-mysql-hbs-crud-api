@@ -1,0 +1,30 @@
+<div class="wrap">
+    <h1>Users list</h1><br>
+    <p><a href="/create">Add user</a></p><br>
+    <table class="table tab_wid">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+    </thead>
+    <tbody>
+            {{#each users}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.age}}</td>
+                    <td>
+                        <a href="/edit/{{this.id}}">Edit</a>
+                    </td>
+                    <td>
+                        <form action="delete/{{this.id}}" method="POST">
+                            <button type="submit" class="btn btn-link delButt">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
